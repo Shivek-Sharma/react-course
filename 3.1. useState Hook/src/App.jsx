@@ -10,8 +10,19 @@ function App() {
   const increaseCounter = () => {
     // counter = counter + 1; //counter will be updated but it won't be reflected in the UI
 
-    if (counter <= 9)
-      setCounter(counter + 1);
+    // This code block will not update the counter 4 times, instead it will only update it by one
+    /*
+    setCounter(counter + 1);
+    setCounter(counter + 1);
+    setCounter(counter + 1);
+    setCounter(counter + 1); //only this setCounter will be considered (final state change in a batch)
+    */
+
+    // This code block will update the counter 4 times
+    setCounter((prevCounter) => prevCounter + 1);
+    setCounter((prevCounter) => prevCounter + 1);
+    setCounter((prevCounter) => prevCounter + 1);
+    setCounter((prevCounter) => prevCounter + 1);
 
     console.log("Counter Increased", counter);
   }
@@ -20,7 +31,7 @@ function App() {
     // counter = counter - 1;
 
     if (counter >= 1)
-      setCounter(counter - 1);
+      setCounter((prevCounter) => prevCounter - 1);
 
     console.log("Counter Decreased", counter);
   }
