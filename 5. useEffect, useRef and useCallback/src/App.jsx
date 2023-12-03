@@ -1,3 +1,5 @@
+/*---> Password Generator <---*/
+
 import { useCallback, useState, useEffect, useRef } from 'react'
 
 function App() {
@@ -35,7 +37,7 @@ function App() {
     // passwordRef.current?.setSelectionRange(0, 5);
   }
 
-  // re-renders the application whenever any of the dependencies changes and perform the tasks defined inside
+  // re-renders the application whenever any of the dependencies state changes and perform the tasks defined inside
   useEffect(() => {
     passwordGenerator();
   }, [length, numberAllowed, charAllowed])
