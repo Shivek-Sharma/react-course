@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
 import Layout from './Layout.jsx'
-import { Home, About, Contact, User, Github, githubInfoLoader } from './components'
+import { Home, About, Contact, User, Github, githubInfoLoader, NoPage } from './components'
 
 /*
 const router = createBrowserRouter([
@@ -36,6 +36,7 @@ const router = createBrowserRouter(
         path='github'
         element={<Github />}
       />
+      <Route path='*' element={<NoPage />} />
     </Route>
   )
 )

@@ -5,6 +5,7 @@ import About from "./About"
 import Contact from "./Contact"
 import User from "./User"
 import { githubInfoLoader, Github } from "./Github"
+import { NoPage } from "./NoPage"
 
 export {
     Header,
@@ -14,5 +15,6 @@ export {
     Contact,
     User,
     Github,
-    githubInfoLoader
+    githubInfoLoader,
+    NoPage
 }
