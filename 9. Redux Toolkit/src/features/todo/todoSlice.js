@@ -6,7 +6,7 @@ const initialState = {
   todos: fetchTodos || []
 }
 
-export const todoSlice = createSlice({
+const todoSlice = createSlice({
   name: 'todo',
   initialState,
   reducers: {
