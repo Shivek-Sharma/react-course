@@ -2,10 +2,13 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
-  // we need useState to reflect the changes in the UI in React
+  // let counter = 0;
+
+  // In React, we need a state to re-render the component whenever the state changes, so that changes can be reflected in the UI
   const [counter, setCounter] = useState(0);
 
-  // let counter = 0; 
+  // We don't need a state for this because it is fully dependent on the counter state
+  let multipliedCounter = counter * 5;
 
   const increaseCounter = () => {
     // counter = counter + 1; //counter will be updated but it won't be reflected in the UI
@@ -40,12 +43,13 @@ function App() {
     <>
       <h1>Chai aur react</h1>
       <h2>Counter: {counter}</h2>
+      <h2>{counter} X 5 = {multipliedCounter}</h2>
 
-      <button onClick={increaseCounter}>Increase Counter {counter}</button>
+      <button onClick={increaseCounter}>Counter + 4</button>
       <br />
-      <button onClick={decreaseCounter}>Decrease Counter {counter}</button>
+      <button onClick={decreaseCounter}>Counter - 1</button>
 
-      <h3>footer: {counter}</h3>
+      <h3>Current Value: {counter}</h3>
     </>
   )
 }
